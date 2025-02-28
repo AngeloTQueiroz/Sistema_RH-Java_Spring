@@ -15,6 +15,7 @@ public class Candidato {
     private String rg;
 
     @NotEmpty
+    @Column(name = "nome_candidato")
     private String nomeCandidato;
 
     @NotEmpty
