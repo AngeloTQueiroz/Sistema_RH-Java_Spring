@@ -5,6 +5,7 @@ import com.AppRH.AppRH.models.Vaga;
 import com.AppRH.AppRH.repository.CandidatoRepository;
 import com.AppRH.AppRH.repository.VagaRepository;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -17,11 +18,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class VagaController {
 
+    @Autowired
     private VagaRepository vr;
+    @Autowired
     private CandidatoRepository cr;
 
     //CADASTRA VAGA
-    @RequestMapping(value = "cadastrarVaga", method = RequestMethod.GET)
+    @RequestMapping(value = "/cadastrarVaga", method = RequestMethod.GET)
     public String form(){
         return "vaga/formVaga";
     }
@@ -36,7 +39,7 @@ public class VagaController {
         }
 
         vr.save(vaga);
-        attributes.addFlashAttribute("Mensagem", "Vaga cadastrada!");
+        attributes.addFlashAttribute("mensagem", "Vaga cadastrada!");
 
         return "redirect:/cadastrarVaga";
     }
@@ -51,7 +54,7 @@ public class VagaController {
     }
 
     // BUSCA NO BANCO
-    @RequestMapping(value = "{codigo}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{codigo}", method = RequestMethod.GET)
     public ModelAndView detalhesVaga(@PathVariable("codigo") long codigo){
         Vaga vaga = vr.findByCodigo(codigo);
         ModelAndView mv = new ModelAndView("vaga/detalhesVaga");
@@ -74,6 +77,7 @@ public class VagaController {
         return "redirect:/vagas";
     }
 
+    @RequestMapping(value = "/{codigo}" , method = RequestMethod.POST)
     public String detalhesVagaPost(@PathVariable("codigo") long codigo, @Valid Candidato candidato,
                                    BindingResult result, RedirectAttributes attributes)
     {
@@ -86,7 +90,7 @@ public class VagaController {
 
         if (cr.findByRg(candidato.getRg()) != null)
         {
-            attributes.addFlashAttribute("mensagem erro", "RG duplicado");
+            attributes.addFlashAttribute("mensagem_erro", "RG duplicado");
             return "redirect:/{codigo}";
         }
 
