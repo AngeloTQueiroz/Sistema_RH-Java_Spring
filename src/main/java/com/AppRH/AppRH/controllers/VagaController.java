@@ -9,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -76,6 +74,7 @@ public class VagaController {
         vr.delete(vaga);
         return "redirect:/vagas";
     }
+    // ADICIONAR CANDIDATO
 
     @RequestMapping(value = "/{codigo}" , method = RequestMethod.POST)
     public String detalhesVagaPost(@PathVariable("codigo") long codigo, @Valid Candidato candidato,
@@ -123,7 +122,7 @@ public class VagaController {
     {
         Vaga vaga = vr.findByCodigo(codigo);
         ModelAndView mv = new ModelAndView("vaga/update-vaga");
-        mv.addObject("vaga ",vaga);
+        mv.addObject("vaga",vaga);
 
         return mv;
     }
