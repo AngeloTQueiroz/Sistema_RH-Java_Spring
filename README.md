@@ -21,30 +21,3 @@
 | **Frontend**    | Thymeleaf • Bootstrap 5.3 • HTML5 • CSS3                                    |
 | **Banco**       | MySQL 8.0 • JPA • Hibernate                                               |
 | **Ferramentas** | Maven • Git • Spring DevTools                                            |
-
-## 🚀 Como Executar
-
-### 📋 Pré-requisitos
-- **Java 22** (JDK 22)
-- MySQL 8.0+
-- Maven 3.9+
-
-### ⚙️ Configuração Rápida
-
-1. **Clone o projeto**
-```bash
-git clone https://github.com/AngeloTQueiroz/Sistema_RH-Java_Spring.git
-cd Sistema_RH-Java_Spring
-
-CREATE DATABASE apprh;
-
-
-spring.datasource.url=jdbc:mysql://localhost:3306/apprh
-spring.datasource.username=seu_usuario
-spring.datasource.password=sua_senha
-
-
-mvn spring-boot:run
-
-
-http://localhost:8080
