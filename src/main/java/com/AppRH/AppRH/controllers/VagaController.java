@@ -102,7 +102,9 @@ public class VagaController {
         String rgRegex = "^\\d{8,10}$";
 
         if (rg == null || !rg.matches(rgRegex)) {
-            attributes.addFlashAttribute("mensagem_erro", "RG inválido!Digite apenas numeros");
+            attributes.addFlashAttribute("mensagem_erro", "RG inválido! Por favor, preencha novamente usando apenas números");
+
+            attributes.addFlashAttribute("candidatoData", candidato);
             return "redirect:/{codigo}";
         }
 
@@ -113,12 +115,14 @@ public class VagaController {
 
         if (email == null || !email.matches(emailRegex)) {
             attributes.addFlashAttribute("mensagem_erro", "Email inválido!");
+
             return "redirect:/{codigo}";
         }
 
         if (result.hasErrors())
         {
             attributes.addFlashAttribute("mensagem_erro", "Verifique os campos");
+
             return "redirect:/{codigo}";
         }
 

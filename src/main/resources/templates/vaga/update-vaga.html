@@ -34,7 +34,7 @@
 
 <div class="container mt-4">
 	<!-- FORMULÁRIO COM THYMELEAF -->
-	<form th:action="@{/editar-vaga}" th:object="${vaga}" method="post">
+	<form th:action="@{/editar-vaga}" th:object="${vaga}" method="post" autocomplete="off">
 
 		<!-- CAMPO OCULTO PARA O CÓDIGO -->
 		<input type="hidden" th:field="*{codigo}" />
