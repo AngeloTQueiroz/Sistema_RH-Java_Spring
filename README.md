@@ -45,3 +45,6 @@ cd sistema-rh-spring
 
 # Execute a aplicação
 mvn spring-boot:run
+
+
+A aplicação estará disponível em: http://localhost:8080
