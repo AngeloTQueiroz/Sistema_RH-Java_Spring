@@ -1,23 +1,47 @@
-# 🏢 Sistema RH - Spring Boot
+# 🚀 Sistema RH - Spring Boot
 
-<div align="center">
+Sistema completo de Recursos Humanos para gestão de vagas e candidatos, desenvolvido em Java Spring Boot.
 
-![Java](https://img.shields.io/badge/Java-22-red?style=for-the-badge&logo=openjdk)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.2-green?style=for-the-badge&logo=springboot)
-![MySQL](https://img.shields.io/badge/MySQL-8.0-blue?style=for-the-badge&logo=mysql)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-purple?style=for-the-badge&logo=bootstrap)
+## ✨ Funcionalidades
 
-**Sistema completo de Recursos Humanos para gestão de vagas e candidatos**
+- ✅ Cadastro e gestão de vagas de emprego
+- ✅ Cadastro e gestão de candidatos
+- ✅ Associação de candidatos às vagas
+- ✅ Validações de dados (RG, Email, etc.)
+- ✅ Interface responsiva com Bootstrap
+- ✅ Operações CRUD completas
 
-[🚀 Começar](#-como-executar) • [📋 Funcionalidades](#-funcionalidades) • [🛠 Tecnologias](#-tecnologias)
+## 🛠️ Tecnologias Utilizadas
 
-</div>
+### Backend
+- **Java 22**
+- **Spring Boot 3.2**
+- **Spring MVC**
+- **Spring Data JPA**
+- **Bean Validation**
 
-## 🛠 Tecnologias
+### Frontend
+- **Thymeleaf**
+- **Bootstrap 5.3**
+- **HTML5 & CSS3**
 
-| Camada          | Tecnologia                                                                 |
-|-----------------|----------------------------------------------------------------------------|
-| **Backend**     | **Java 22** • Spring Boot 3.2 • Spring MVC • Spring Data JPA • Bean Validation  |
-| **Frontend**    | Thymeleaf • Bootstrap 5.3 • HTML5 • CSS3                                    |
-| **Banco**       | MySQL 8.0 • JPA • Hibernate                                               |
-| **Ferramentas** | Maven • Git • Spring DevTools                                            |
+### Banco de Dados
+- **SQL Server**
+- **JPA & Hibernate**
+
+### Ferramentas
+- **Maven**
+- **Git**
+- **Spring DevTools**
+
+## 🚀 Como Executar
+
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/sistema-rh-spring.git
+
+# Entre no diretório
+cd sistema-rh-spring
+
+# Execute a aplicação
+mvn spring-boot:run
